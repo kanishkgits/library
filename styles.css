@@ -57,6 +57,10 @@ body{
     background-color: black;
 }
 
+#addBook:focus{
+    outline: none;
+}
+
 :modal{
     background-color: #303030;
     color: aliceblue;
@@ -84,7 +88,7 @@ body{
 
 input{
     border: none;
-    color: aliceblue    ;
+    color: aliceblue;
     background-color: #303030;
     border-bottom: 2px solid aliceblue;
     height: 1.5rem;
@@ -117,3 +121,45 @@ input:focus {
     border: 2px dashed aliceblue;
     background-color: #303030;
 }
+
+.main{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+.main div{ 
+    background-color: rgb(141, 181, 184);
+    color: #303030;
+    font-size: 2rem;
+    margin: 2rem;
+    padding: 1rem;
+    width: 350px;
+    border: 2px dashed #303030;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.main div:hover{
+    background-color: rgb(99, 176, 182);
+}
+
+.main div button{
+    padding: 10px;
+    margin-bottom: 2rem;
+    border: 1px solid #303030;
+    background-color: rgb(77, 77, 77);
+    color: aliceblue;
+    aspect-ratio: 1 / 1;
+    border-radius: 50%; 
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.main div button:hover{
+    background-color: black;
+}
+
