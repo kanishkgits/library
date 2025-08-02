@@ -8,14 +8,17 @@
 </head>
 <body>
     <div class="header">
-        <h1>Library</h1>
-        <button id="addBook">Add a Book</button>
+        <p>Library</p>
+        <label for="addBook">Add a new book</label>
+        <button id="addBook">+</button>
+
     </div>
     <div class="main">
         
     </div>
     <dialog id="book-details">
         <form method="dialog" class="myForm">
+            <button id="cancel" type="reset">X</button>
           <p>
             <label for="bookName">Book Name:</label>
             <input type="text" id="bookName" name="bookName">
@@ -26,10 +29,7 @@
             <label for="read">Have you read it?</label>
             <input type="text" id="read" name="read">
           </p>
-          <div>
-            <button id="cancel" type="reset">Cancel</button>
-            <button type="submit" id="submit">Confirm</button>
-          </div>
+          <button type="submit" id="submit">Submit</button>
         </form>
     </dialog>
     <script src="script.js"></script>

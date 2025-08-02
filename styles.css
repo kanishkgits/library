@@ -1,22 +1,119 @@
+@font-face {
+    font-family: product-sample;
+    src: url(fonts/Product\ Sample.otf);
+}
+
+@font-face {
+    font-family: wonderwall;
+    src: url(fonts/WONDERWALL.otf);
+}
+
+html{
+    background-color: aliceblue;
+}
+
 *{
     margin: 0;
     padding: 0;
 }
 
 body{
+    font-family: wonderwall;
     display: grid;
 }
 
 .header{
+    color: aliceblue;
+    background-color: #303030;
     padding: 1rem;
     display: flex;
+    align-items: center;
 }
 
-.header h1{
+.header p{
+    font-size: 3rem;
     margin-right: auto;
 }
 
-.header button{
+#addBook{
+    color: aliceblue;
+    background-color: rgb(77, 77, 77);
+    display: flex;
+    justify-content: center;
+    height: 3rem;
+    width: 3rem;
+    font-size: 2.5rem;
     margin-right: 5rem;
-    padding: 1rem;
+    border-radius: 50%;
+    border: none;
+}
+
+.header label{
+    font-size: 2.5rem;
+    padding-right: 1rem;
+}
+
+#addBook:hover{
+    background-color: black;
+}
+
+:modal{
+    background-color: #303030;
+    color: aliceblue;
+    border: 0.2rem solid black;
+    padding: 2rem;
+    border-radius: 20px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 60%;
+    display: flex;
+}
+
+.myForm{
+    display: flex;
+    flex-direction: column;
+}
+
+.myForm p{
+    font-size: 1.5rem;
+    line-height: 3rem;
+    display: flex;
+    flex-direction: column;
+}
+
+input{
+    border: none;
+    color: aliceblue    ;
+    background-color: #303030;
+    border-bottom: 2px solid aliceblue;
+    height: 1.5rem;
+    font-size: 1.2rem;
+}
+
+input:focus {
+  outline: none;
+}
+
+.myForm #cancel{
+    padding: 10px;
+    border: 2px solid black;
+    aspect-ratio: 1 / 1;
+    border-radius: 50%; 
+    font-size: 1.2rem;
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.myForm #submit{
+    align-self: center;
+    width: 70%;
+    color: aliceblue;
+    margin-top: 2rem;
+    font-size: 1.5rem;
+    font-family: wonderwall;
+    border: 2px dashed aliceblue;
+    background-color: #303030;
 }
