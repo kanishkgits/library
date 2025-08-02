@@ -18,14 +18,28 @@ function display(){
     container.replaceChildren();
     for(let i = 0; i < myLibrary.length; i++){
         const book = document.createElement("div");
-        book.innerHTML = `
-            <h2>${myLibrary[i].title}</h2>
-            <h3>${myLibrary[i].author}</h3>
-            <h3>No. of Pages: ${myLibrary[i].pages}</h3>
-            <h3>Read: ${myLibrary[i].read}</h3>
-            <h3>ID: ${myLibrary[i].id}</h3>
-            <button>Remove</button>
-            `;
+
+        const name = document.createElement("h2");
+        name.textContent = `${myLibrary[i].title}`;
+
+        const author = document.createElement("h3");
+        author.textContent = `- by ${myLibrary[i].author}`;
+
+        const pages = document.createElement("h3");
+        pages.textContent = `No. of pages: ${myLibrary[i].pages}`;
+
+        const read = document.createElement("h3");
+        read.textContent = `Read: ${myLibrary[i].read}`;
+
+        const btn = document.createElement("button");
+        btn.textContent = "Remove";
+
+        book.appendChild(name);
+        book.appendChild(author);
+        book.appendChild(pages);
+        book.appendChild(read);
+        book.appendChild(btn);
+        
         container.appendChild(book);
     }
 }
