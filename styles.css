@@ -79,11 +79,19 @@ body{
     flex-direction: column;
 }
 
-.myForm p{
+.myForm .form-div{
     font-size: 1.5rem;
     line-height: 3rem;
     display: flex;
     flex-direction: column;
+}
+
+.form-div select{
+    background-color: #303030;
+    color: aliceblue;
+    border: none;
+    border-bottom: 2px solid aliceblue;
+    font-size: 1.2rem;
 }
 
 input{
@@ -145,7 +153,7 @@ input:focus {
     background-color: rgb(99, 176, 182);
 }
 
-.main div button{
+.main div .remove{
     padding: 10px;
     margin-bottom: 2rem;
     border: 1px solid #303030;
@@ -159,7 +167,20 @@ input:focus {
     justify-content: center;
 }
 
-.main div button:hover{
+.remove:hover{
     background-color: black;
 }
 
+.toggle{
+    font-family: wonderwall;
+    font-size: 1.5rem;
+    padding: 0.5rem;
+    background-color: aliceblue;
+    border: 2px solid black;
+    border-radius: 12px;
+
+}
+
+.toggle:hover{
+    background-color: rgb(110, 164, 211);
+}

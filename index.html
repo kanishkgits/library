@@ -19,16 +19,19 @@
     <dialog id="book-details">
         <form method="dialog" class="myForm">
             <button id="cancel" type="reset">X</button>
-          <p>
+          <div class="form-div">
             <label for="bookName">Book Name:</label>
-            <input type="text" id="bookName" name="bookName">
+            <input type="text" id="bookName" name="bookName" required>
             <label for="author">Author Name:</label>
-            <input type="text" id="author" name="author">
+            <input type="text" id="author" name="author" required>
             <label for="pages">No. of Pages:</label>
-            <input type="text" id="pages" name="pages">
-            <label for="read">Have you read it?</label>
-            <input type="text" id="read" name="read">
-          </p>
+            <input type="text" id="pages" name="pages" required>
+            <label>Have you read it?</label>
+            <select name="read">
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+            </select>
+        </div>
           <button type="submit" id="submit">Submit</button>
         </form>
     </dialog>

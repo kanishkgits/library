@@ -7,6 +7,10 @@ function Book(title, author, pages, read){
     this.read = read;
     this.id = crypto.randomUUID();
 }
+Book.prototype.toggleRead = function () {
+    if(this.read == "Yes") this.read = "No";
+    else this.read = "Yes";
+};
 
 function addBookToLibrary(title, author, pages, read){
     const newBook = new Book(title, author, pages, read);
@@ -17,6 +21,8 @@ const container = document.querySelector(".main");
 function display(){
     container.replaceChildren();
     for(let i = 0; i < myLibrary.length; i++){
+        bookObj = myLibrary[i];
+
         const book = document.createElement("div");
 
         const name = document.createElement("h2");
@@ -29,26 +35,51 @@ function display(){
         pages.textContent = `No. of pages: ${myLibrary[i].pages}`;
 
         const read = document.createElement("h5");
+        read.setAttribute("class", "reading");
         read.textContent = `Read: ${myLibrary[i].read}`;
 
         const btn = document.createElement("button");
-        btn.setAttribute("id", `${myLibrary[i].id}`);
+        btn.dataset.id = bookObj.id;
+        btn.setAttribute("class", `remove`)
         btn.textContent = "X";
+
+        const toggleReadbtn = document.createElement("button");
+        toggleReadbtn.dataset.id = bookObj.id;
+        toggleReadbtn.setAttribute("class", "toggle");
+        toggleReadbtn.textContent = "toggle status"; 
 
         book.appendChild(btn);
         book.appendChild(name);
         book.appendChild(author);
         book.appendChild(pages);
         book.appendChild(read);
+        book.appendChild(toggleReadbtn);
 
         container.appendChild(book);
-
-        btn.addEventListener("click", (e) =>{
-            const target = document.getElementById(`${e.target.id}`);
-            container.removeChild(target.parentElement);
-            myLibrary.pop(target.parentElement);
-        })
     }
+    const removeButtons = document.querySelectorAll(".remove");
+    removeButtons.forEach((button) => {
+        button.addEventListener("click", () => {
+            const idToRemove = button.dataset.id;
+            const index = myLibrary.findIndex(book => book.id === idToRemove);
+            if (index !== -1) {
+                myLibrary.splice(index, 1);
+                display();
+            }
+        });
+    });
+
+    const toggleButtons = document.querySelectorAll(".toggle");
+    toggleButtons.forEach((button) => {
+        button.addEventListener("click", () => {
+            const idToToggle = button.dataset.id;
+            const book = myLibrary.find(book => book.id === idToToggle);
+            if (book) {
+                book.toggleRead();
+                display();
+            }
+        });
+    });
 }
 
 const addBook = document.querySelector("#addBook");
